@@ -11,7 +11,7 @@ REPOSITORIES=$1
 
 # enable all repositories if any specified
 if [[ -z $REPOSITORIES ]]; then
-    REPOSITORIES="redis"
+    REPOSITORIES="base"
 fi
 
 # for returning later to the main directory
