@@ -12,7 +12,7 @@ COPY ./scripts/apk-install /usr/sbin/apk-install
 RUN apk update && apk upgrade
 
 # Base packages useful for other containers
-RUN apk-install ca-certificates curl wget vim zsh tini
+RUN apk-install ca-certificates curl wget vim zsh tini git
 
 ENTRYPOINT ["/sbin/tini", "--"]
 
