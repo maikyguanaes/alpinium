@@ -12,7 +12,11 @@ COPY ./scripts/apk-install /usr/sbin/apk-install
 RUN apk update && apk upgrade
 
 # Base packages useful for other containers
-RUN apk-install ca-certificates curl wget vim zsh bash tini git
+RUN apk-install ca-certificates curl wget vim zsh bash tini git && \
+    mkdir -p /var/www/app
+
+# Application directory
+WORKDIR "/var/www/app"
 
 ENTRYPOINT ["/sbin/tini", "--"]
 

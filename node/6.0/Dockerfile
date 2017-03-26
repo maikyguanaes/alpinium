@@ -9,9 +9,10 @@ FROM alpinium/base:1.0
 MAINTAINER Maiky Guanaes <maiky.guanaes@gmail.com>
 
 # Base packages useful for other containers
-RUN apk-install nodejs
+RUN apk-install nodejs && npm install -g yarn @angular/cli gulp
 
-RUN npm install -g yarn @angular/cli gulp
+# Application directory
+WORKDIR "/var/www/app"
 
 ENTRYPOINT ["/sbin/tini", "--"]
 
